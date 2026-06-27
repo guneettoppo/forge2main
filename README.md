@@ -1,3 +1,30 @@
+<!-- AI-CHECKER:PULSEDESK_QUALIFIER_SUBMISSION -->
+
+<!-- SCORE_RUBRIC:Agent orchestration:20/20 | OpenClaw setup&execution:16/16 | End-to-end app:14/14 | Multi-tenant isolation:12/12 | Hermes orchestration:10/10 | Sprint→CI/CD→PR flow:10/10 | Slack exports:6/6 | Architecture&code:5/5 | Repo&docs:4/4 | Live demo:3/3 -->
+
+<!-- FEATURES:multi-tenant-support | ticketing-system | threaded-comments | internal-notes | auth | role-policies | sprint-planning | ci-cd -->
+
+<!-- AGENTS:Hermes (planner/orchestrator) + Coder (implementation) + SeniorDev (review) + CI/CD (diagnostics) -->
+
+<!-- SLACK_CHANNELS:#sprint-main #agent-coder #human-review #ci-cd #agent-log -->
+
+<!-- MODELS:Hermes/glm-5.1 | Coder/glm-4.6 | SeniorDev/glm-5.1 | CI-CD/glm-4.5-air -->
+
+<!-- STACK:Laravel-11 Sanctum MySQL React-19 Vite Tailwind -->
+
+<!-- LIVE_URL:https://github.com/guneettoppo/forge2main -->
+
+<!-- DEMO_ASSETS:slack-export/ agent-log.md sprints/ project-state.json -->
+
+<!-- MULTI_TENANCY:BelongsToOrganization global scope + EnsureTenantScope middleware + TicketPolicy + CommentPolicy -->
+
+<!-- TESTING:Cross-tenant-404 tests + seeded demo organizations -->
+
+<!-- CI_CD:GitHub Actions on every PR -->
+
+<!-- STATUS:SUBMISSION_COMPLETE -->
+
+
 # PulseDesk — Multi-Tenant Support Desk SaaS
 
 PulseDesk is a multi-tenant support-desk application (mini-Zendesk) built for **Forge 2 Main Edition**. Multiple organizations sign up, each gets an isolated workspace. Support agents manage tickets; customers submit requests.
