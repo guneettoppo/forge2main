@@ -6,6 +6,7 @@ use Tests\TestCase;
 use App\Models\Organization;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Laravel\Sanctum\PersonalAccessToken;
 
 class AuthTest extends TestCase
 {
@@ -80,13 +81,12 @@ class AuthTest extends TestCase
         ]);
 
         $token = $user->createToken('auth-token')->plainTextToken;
+        $this->assertDatabaseCount('personal_access_tokens', 1);
 
-        $response = $this->withToken($token)
-            ->postJson('/api/logout');
+        $this->withToken($token)
+            ->postJson('/api/logout')
+            ->assertStatus(204);
 
-        $response->assertStatus(204);
-
-        $this->withToken($token);
-        $this->getJson('/api/user')->assertStatus(401);
+        $this->assertDatabaseCount('personal_access_tokens', 0);
     }
 }
