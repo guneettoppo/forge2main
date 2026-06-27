@@ -207,7 +207,7 @@ class TicketCrudTest extends TestCase
         Ticket::create([
             'organization_id' => $user->organization_id,
             'subject'         => 'Login issue',
-            'description'     => 'Payment page looks broken',
+            'description'     => 'Page looks broken after update',
             'status'          => 'open',
             'priority'        => 'high',
             'requester_id'    => $user->id,

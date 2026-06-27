@@ -63,6 +63,7 @@ class TicketController extends Controller
         if (empty($validated['priority'])) {
             $validated['priority'] = 'medium';
         }
+        $validated['status'] = $validated['status'] ?? 'open';
 
         // For customers, assignee is ignored — they can't assign
         if ($user->role === 'customer' && !empty($validated['assignee_id'])) {
