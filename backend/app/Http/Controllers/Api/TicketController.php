@@ -33,8 +33,8 @@ class TicketController extends Controller
         if ($request->has('q')) {
             $search = $request->q;
             $query->where(function ($q) use ($search) {
-                $q->where('subject', 'ilike', "%{$search}%")
-                  ->orWhere('description', 'ilike', "%{$search}%");
+                $q->where('subject', 'like', "%{$search}%")
+                  ->orWhere('description', 'like', "%{$search}%");
             });
         }
 
